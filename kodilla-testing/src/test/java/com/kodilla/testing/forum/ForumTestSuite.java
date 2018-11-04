@@ -1,42 +1,133 @@
 package com.kodilla.testing.forum;
 
-import com.kodilla.testing.user.SimpleUser;
 import org.junit.*;
+
+//Test suite for classes of Forum
 public class ForumTestSuite {
-    @Before
-    public void before(){
-        System.out.println("Test Case: begin");
-    }
-    @After
-    public void after() {
-        System.out.println("Test Case: end");
-    }
+    private static int testCounter = 0;
+
     @BeforeClass
-    public static void beforeClass() {
-        System.out.println("Test Suite: begin");
+    public static void beforeAllTests() {
+        System.out.println("This is begining of tests.");
     }
     @AfterClass
-    public static void afterClass() {
-        System.out.println("Test Suite; end");
+    public static void afterAllTests() {
+        System.out.println("All tests are finished.");
     }
+    @Before
+    public void beforeEveryTest() {
+        testCounter++;
+        System.out.println("Preparing to execute test #" + testCounter);
+    }
+    // test 1 ForumUser
     @Test
-    public void testCasUsername() {
-        //Given
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
-        //When
-        String result = simpleUser.getUsername();
-        System.out.println("Testing " + result);
+    public void testAddPost() {
+        // Given
+        ForumUser forumUser = new ForumUser("mssmith", "John Smith");
+        // When
+        forumUser.addPost("mrsmith", "Hello everyone,this is my first contibution here!");
         // Then
-        Assert.assertEquals("theForumUser", result);
+        Assert.assertEquals(1, forumUser.getPostsQuantity());
     }
+    // test 2 ForumComment
     @Test
-    public void testRealName(){
+    public void testAddComment() {
         //Given
-        SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+
         //When
-        String result = simpleUser.getRealName();
-        System.out.println("Testing " + result);
+        forumUser.addComment(thePost, "mrsmith", "Thank you for all good words!");
+
         //Then
-        Assert.assertEquals("John Smith", result);
+        Assert.assertEquals(1, forumUser.getCommentsQuantity());
+    }
+    // test 3
+    @Test
+    public void testGetPost() {       // nie zdaje sie
+        //Given
+        ForumUser forumUser = new ForumUser("mrsmit", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+        forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
+        //When
+        ForumPost retrievedPost;
+        retrievedPost = forumUser.getPost(0);
+        //Then
+        Assert.assertEquals(thePost, retrievedPost);
+    }
+    // test4
+    @Test
+    public void testGetComment() {
+        //Given
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+        ForumComment theComment = new ForumComment(thePost, "mrsmith",
+                "Thank you for all good words!");
+        forumUser.addComment(thePost, theComment.getAuthor(),
+                theComment.getCommentBody());
+        //When
+        ForumComment retrievedComment = forumUser.getComment(0);
+        //Then
+        Assert.assertEquals(theComment, retrievedComment);
+    }
+    // test 5
+    @Test
+    public void testRemovePostNotExisting() {
+        //Given
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+        //When
+        boolean result = forumUser.removePost(thePost);
+        //Then
+        Assert.assertFalse(result);
+    }
+    // test 6
+    @Test
+    public void testRemoveCommentNotExisting() {
+        //Given
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+        ForumComment theComment = new ForumComment(thePost, "mrsmith",
+                "Thank you for all good words!");  // zamienione
+        //When
+        boolean result = forumUser.removeComment(theComment);
+        //Then
+        Assert.assertFalse(result);
+    }
+    // test 7
+    @Test
+    public void testRemovePost() {
+        //Given
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+        forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
+        //When
+        boolean result = forumUser.removePost(thePost);
+        //Then
+        Assert.assertTrue(result);
+        Assert.assertEquals(0, forumUser.getPostsQuantity());
+    }
+    // test 8
+    @Test
+    public void testRemoveComment() {
+        //Given
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+        ForumComment theComment = new ForumComment(thePost, "mrsmith",
+                "Thank you for all good words!");
+        forumUser.addComment(thePost, theComment.getAuthor(),
+                theComment.getCommentBody());
+        //When
+        boolean result = forumUser.removeComment(theComment);
+        //Then
+        Assert.assertTrue(result);
+        Assert.assertEquals(0, forumUser.getCommentsQuantity());
     }
 }
