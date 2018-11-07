@@ -1,10 +1,8 @@
-/*
-package com.kodilla.testing.weathet.stub;
+package com.kodilla.testing.weather.stub;
 
 import java.util.HashMap;
 
-public class TemperaturesStub implements Temperatures{
-
+public class TemperaturesStub implements Temperatures {
     @Override
     public HashMap<Integer, Double> getTemperatures() {
         HashMap<Integer, Double> stubResult = new HashMap<Integer, Double>();
@@ -14,9 +12,8 @@ public class TemperaturesStub implements Temperatures{
         stubResult.put(1, 26.2);
         stubResult.put(2, 24.8);
         stubResult.put(3, 25.2);
-        stubResult.put(4, 26.5);
+        stubResult.put(4, 26.1);
 
         return stubResult;
     }
 }
-*/

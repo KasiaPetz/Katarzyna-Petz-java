@@ -1,5 +1,4 @@
-/*
-package com.kodilla.testing.weathet.stub;
+package com.kodilla.testing.weather.stub;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,4 +21,4 @@ public class WeatherForecast {
         return resultMap;
         }
 }
-*/
+
