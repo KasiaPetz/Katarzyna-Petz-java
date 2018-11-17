@@ -42,4 +42,5 @@ public class StreamMain {
                 .forEach( es -> System.out.println(es.getKey() + " " + es.getValue()));
 
     }
+
 }
