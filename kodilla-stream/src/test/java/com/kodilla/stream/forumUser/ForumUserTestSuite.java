@@ -1,4 +1,4 @@
-package com.kodilla.stream;
+package com.kodilla.stream.forumUser;
 
 import com.kodilla.stream.forum.ForumUser;
 import org.junit.Assert;
