@@ -149,11 +149,11 @@ public class BoardTestSuite {
         double result = project.getTaskLists().stream()
                 .filter(inProgressTasks :: contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .mapToLong(t -> ChronoUnit.DAYS.between(t.getCreated(), t.getDeadline()))
+                .mapToLong(t -> ChronoUnit.DAYS.between(t.getCreated(), LocalDate.now()))
                 .average().getAsDouble();
 
         //Then
-        Assert.assertEquals(18.333, result, 0.001);
+        Assert.assertEquals(10.0, result, 0.001);
     }
 
 
