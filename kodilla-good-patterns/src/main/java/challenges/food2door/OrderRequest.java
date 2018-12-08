@@ -1,16 +1,16 @@
 package challenges.food2door;
 
 public class OrderRequest {
-    private Producer producer;
+    private String producerName;
     private Order order;
 
-    public OrderRequest(Producer producer, Order order) {
-        this.producer = producer;
+    public OrderRequest(String producerName, Order order) {
+        this.producerName = producerName;
         this.order = order;
     }
 
-    public Producer getProducer() {
-        return producer;
+    public String getProducerName() {
+        return producerName;
     }
 
     public Order getOrder() {

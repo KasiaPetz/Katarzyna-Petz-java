@@ -1,22 +1,17 @@
 package challenges.food2door;
 
 public class OrderProcessor {
-    private Producer producer;
-    private Order order;
 
-    public OrderProcessor(final Producer producer, final Order order) {
-        this.producer = producer;
-        this.order = order;
-    }
     public OrderDto processOrder(OrderRequest orderRequest) {
-        if (producer.equals("GlutenFreeShop")) {
-            Producer producer = new GlutenFreeShop();
-        } else if (producer.equals("ExtraFoodShop")) {
-            Producer producer = new ExtraFoodShop();
-        } else if (producer.equals("HealthyShop")) {
-            Producer producer = new HealthyShop();
+        Producer producer = null;
+        if (orderRequest.getProducerName().equals("GlutenFreeShop")) {
+             producer = new GlutenFreeShop();
+        } else if (orderRequest.getProducerName().equals("ExtraFoodShop")) {
+             producer = new ExtraFoodShop();
+        } else if (orderRequest.getProducerName().equals("HealthyShop")) {
+            producer = new HealthyShop();
         }
-        boolean isComplited = producer.process(order);
+        boolean isComplited = producer.process(orderRequest.getOrder());
         if (isComplited) {
             return new  OrderDto(orderRequest.getOrder().getOrderId(), true);
         } else {
