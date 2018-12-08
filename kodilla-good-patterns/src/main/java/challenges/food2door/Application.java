@@ -8,7 +8,6 @@ public class Application {
 
         Order order = new Order(11, LocalDate.of(2018, 12, 8),
                 "eggs", 20);
-        Producer exstraFoodShop = new ExtraFoodShop();
         OrderRequest orderRequest = new OrderRequest("ExtraFoodShop", order);
         OrderProcessor orderProcessor1 = new OrderProcessor();
 
