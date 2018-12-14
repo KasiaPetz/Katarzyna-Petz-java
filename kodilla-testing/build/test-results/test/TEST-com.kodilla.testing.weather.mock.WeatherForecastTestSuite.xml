@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.weather.mock.WeatherForecastTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-11-10T18:26:38" hostname="LAPTOP-OSI1RABP" time="0.008">
+<testsuite name="com.kodilla.testing.weather.mock.WeatherForecastTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-12T12:26:18" hostname="LAPTOP-OSI1RABP" time="0.004">
   <properties/>
-  <testcase name="testcalculateForaecastWithMock" classname="com.kodilla.testing.weather.mock.WeatherForecastTestSuite" time="0.008"/>
+  <testcase name="testcalculateForaecastWithMock" classname="com.kodilla.testing.weather.mock.WeatherForecastTestSuite" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
