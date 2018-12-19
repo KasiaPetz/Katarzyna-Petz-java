@@ -35,5 +35,4 @@ public class BoardConfig {
     public TaskList doneList() {
         return new TaskList();
     }
-    //utworzy trzy różne Beany reprezentujące listy zadań i wstrzyknie je do Beana klasy Board.
 }

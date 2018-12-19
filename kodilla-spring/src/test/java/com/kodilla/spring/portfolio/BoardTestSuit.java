@@ -24,8 +24,8 @@ public class BoardTestSuit {
         board.getToDoList().getTasks().add("Task to do");
 
         //Then
-        Assert.assertEquals(1,board.getDoneList().getTasks().size());
-        Assert.assertEquals(1,board.getInProgressList().getTasks().size());
-        Assert.assertEquals(1,board.getToDoList().getTasks().size());
+        Assert.assertEquals(1, board.getDoneList().getTasks().size());
+        Assert.assertEquals(1, board.getInProgressList().getTasks().size());
+        Assert.assertEquals(1, board.getToDoList().getTasks().size());
     }
 }
