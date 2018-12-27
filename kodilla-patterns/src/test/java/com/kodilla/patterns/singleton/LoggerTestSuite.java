@@ -7,7 +7,7 @@ import org.junit.Test;
 public class LoggerTestSuite {
     @BeforeClass
     public static void logLogger() {
-        Logger.getInstance().log("app");
+        Logger.getInstance().log("Log 1");
     }
     @Test
     public void testGetLastLogg() {
@@ -17,7 +17,7 @@ public class LoggerTestSuite {
         System.out.println("Logged: " + lastLog);
 
         //Then
-        Assert.assertEquals("app", lastLog);
+        Assert.assertEquals("Log 1", lastLog);
     }
 
 }
