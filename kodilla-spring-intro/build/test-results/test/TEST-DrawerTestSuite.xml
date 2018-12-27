@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DrawerTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-12-12T11:41:44" hostname="LAPTOP-OSI1RABP" time="0.025">
+<testsuite name="DrawerTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-12-27T14:23:26" hostname="LAPTOP-OSI1RABP" time="0.022">
   <properties/>
-  <testcase name="testDoDrawingWithTriangle" classname="DrawerTestSuite" time="0.018"/>
+  <testcase name="testDoDrawingWithTriangle" classname="DrawerTestSuite" time="0.015"/>
   <testcase name="testDoDrawingWithCircle" classname="DrawerTestSuite" time="0.006"/>
   <system-out><![CDATA[This is a triangle
 This is a circle
