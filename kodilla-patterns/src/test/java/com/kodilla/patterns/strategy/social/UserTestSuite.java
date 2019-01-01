@@ -1,9 +1,6 @@
 package com.kodilla.patterns.strategy.social;
 
-import com.kodilla.patterns.strategy.social.Millenials;
-import com.kodilla.patterns.strategy.social.SnapchatPublisher;
-import com.kodilla.patterns.strategy.social.YGeneration;
-import com.kodilla.patterns.strategy.social.ZGeneration;
+
 import org.junit.Assert;
 import org.junit.Test;
 
