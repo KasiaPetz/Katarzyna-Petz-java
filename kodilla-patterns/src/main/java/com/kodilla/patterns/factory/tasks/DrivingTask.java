@@ -4,6 +4,7 @@ public class DrivingTask implements Task {
     final String taskName;
     final String where;
     final String using;
+    private boolean isExecuted = false;
 
     public DrivingTask(String taskName, String where, String using) {
         this.taskName = taskName;
@@ -13,7 +14,12 @@ public class DrivingTask implements Task {
 
     @Override
     public void executeTask() {
-        //?????
+        if (isExecuted) {
+            System.out.println("Task already executed");
+        } else {
+            System.out.println("I`m driving");
+            isExecuted = true;
+        }
     }
 
     @Override
@@ -23,6 +29,6 @@ public class DrivingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return false;
+        return isExecuted;
     }
 }
