@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns.library.LibraryTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-01-07T19:18:14" hostname="LAPTOP-OSI1RABP" time="0.02">
+  <properties/>
+  <testcase name="testGetBooks" classname="com.kodilla.patterns.library.LibraryTestSuite" time="0.02"/>
+  <system-out><![CDATA[Library{name='Library', books=[Book{title='Title3', author='Author3', publicationDate=1953-04-04}, Book{title='Title4', author='Author4', publicationDate=1954-05-05}, Book{title='Title5', author='Author5', publicationDate=1955-06-06}, Book{title='Title2', author='Author2', publicationDate=1952-03-03}, Book{title='Title1', author='Author1', publicationDate=1951-02-02}]}
+Library{name='Cloned Library', books=[Book{title='Title3', author='Author3', publicationDate=1953-04-04}, Book{title='Title4', author='Author4', publicationDate=1954-05-05}, Book{title='Title5', author='Author5', publicationDate=1955-06-06}, Book{title='Title2', author='Author2', publicationDate=1952-03-03}, Book{title='Title1', author='Author1', publicationDate=1951-02-02}]}
+Library{name='Second cloned Library', books=[Book{title='Title3', author='Author3', publicationDate=1953-04-04}, Book{title='Title4', author='Author4', publicationDate=1954-05-05}, Book{title='Title5', author='Author5', publicationDate=1955-06-06}, Book{title='Title2', author='Author2', publicationDate=1952-03-03}, Book{title='Title1', author='Author1', publicationDate=1951-02-02}]}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

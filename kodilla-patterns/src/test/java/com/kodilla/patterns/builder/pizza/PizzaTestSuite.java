@@ -18,6 +18,6 @@ public class PizzaTestSuite {
         //When
         int howManyIngredients = pizza.getIngredients().size();
         //Then
-        Assert.assertEquals(3, howManyIngredients);
+        Assert.assertEquals(2, howManyIngredients);
     }
 }

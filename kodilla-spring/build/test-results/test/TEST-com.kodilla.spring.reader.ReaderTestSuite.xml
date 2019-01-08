@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.spring.reader.ReaderTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-12-27T14:23:24" hostname="LAPTOP-OSI1RABP" time="0.063">
+<testsuite name="com.kodilla.spring.reader.ReaderTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-01-07T19:18:20" hostname="LAPTOP-OSI1RABP" time="0.052">
   <properties/>
-  <testcase name="testRead" classname="com.kodilla.spring.reader.ReaderTestSuite" time="0.033"/>
-  <testcase name="testConditional" classname="com.kodilla.spring.reader.ReaderTestSuite" time="0.03"/>
-  <system-out><![CDATA[2018-12-27 15:23:24.342  INFO 6608 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3c2cb0b6: startup date [Thu Dec 27 15:23:24 CET 2018]; root of context hierarchy
+  <testcase name="testRead" classname="com.kodilla.spring.reader.ReaderTestSuite" time="0.028"/>
+  <testcase name="testConditional" classname="com.kodilla.spring.reader.ReaderTestSuite" time="0.024"/>
+  <system-out><![CDATA[2019-01-07 20:18:20.600  INFO 28220 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6101ff3d: startup date [Mon Jan 07 20:18:20 CET 2019]; root of context hierarchy
 Reading: The book number one
-2018-12-27 15:23:24.375  INFO 6608 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@16860095: startup date [Thu Dec 27 15:23:24 CET 2018]; root of context hierarchy
+2019-01-07 20:18:20.628  INFO 28220 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@680a3a49: startup date [Mon Jan 07 20:18:20 CET 2019]; root of context hierarchy
 Bean book2 was found in the container: true
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
