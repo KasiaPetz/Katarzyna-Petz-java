@@ -17,7 +17,6 @@ public class RpsRunner {
         int roundsNumber = scanner.nextInt();
         game.setRoundsNumber(roundsNumber);
 
-        System.out.println("Rozpoczęto grę!\n");
         game.startNewGame();
 
     }
