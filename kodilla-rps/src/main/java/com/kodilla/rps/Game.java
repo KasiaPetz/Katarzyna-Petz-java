@@ -4,12 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-
     private String username;
     private int roundsNumber;
-
     private int playerPoints;
-    private int cpuPoints;
+    private int secondPlayerPoints;
     private boolean end;
     private String endStatus;
 
@@ -34,10 +32,10 @@ public class Game {
     }
 
     public void startNewGame() {
-        System.out.println("Rozpoczęto grę!\n");
+        System.out.println("Start the game!\n");
 
         playerPoints = 0;
-        cpuPoints = 0;
+        secondPlayerPoints = 0;
         end = false;
 
         Scanner scanner = new Scanner(System.in);
@@ -63,85 +61,83 @@ public class Game {
                     break;
 
                 case 'x':
-                    System.out.println("Czy na pewno zakonczyc gre?");
+                    System.out.println("Are you sure to quit game?");
                     if(confirm()) {
                         end = true;
                         endStatus = "quit";
                     }
                     break;
                 case 'n':
-                    System.out.println("Czy na pewno zakonczyc aktualna gre?");
+                    System.out.println("Are you sure to quit this game ?");
                     if(confirm()) {
                         endStatus = "restart";
                     }
                     break;
                 default:
-                    System.out.println("Zła opcja, proszę wybrac ponownie.");
+                    System.out.println("Wrong option, chose again.");
             }
-
         }
-
         afterGame();
-
     }
 
     public void printMenu() {
 
-        System.out.println("Klawisz 1 - zagranie \"kamień\"");
-        System.out.println("Klawisz 2 - zagranie \"papier\"");
-        System.out.println("Klawisz 3 - zagranie \"nożyce\"");
-        System.out.println("Klawisz x - zakończ gre");
-        System.out.println("Klawisz n - restart");
+        System.out.println("1 - \"rock\"");
+        System.out.println("2 - \"paper\"");
+        System.out.println("3 - \"scissors\"");
+        System.out.println("x - finish game");
+        System.out.println("n - restart");
 
     }
 
     //0 - remis 1 - wygrana -1 - przegrana
+    //1 - kamien, 2 - papier, 3 - nozyce
+    //1 bije 3
+    //2 bije 1
+    //3 bije 2
     public void playRound(int playerChoice) {
         Random rnd = new Random();
-        int cpuChoice = rnd.nextInt(3) + 1;
-        //1 - kamien, 2 - papier, 3 - nozyce
-        //1 bije 3
-        //2 bije 1
-        //3 bije 2
+        int secPlayerChoice = rnd.nextInt(3) + 1;
 
-        System.out.println("Gracz : " + optionString(playerChoice) + " - " + optionString(cpuChoice) + " : CPU");
+        System.out.println("Player : " + optionString(playerChoice) + " \n" +
+                "Second Player: " + optionString(secPlayerChoice));
 
-        if(playerChoice == cpuChoice) {
-            System.out.println("Remis !");
+        if(playerChoice == secPlayerChoice) {
+            System.out.println("Remis!");
             return;
         }
 
-        if((playerChoice == 1 && cpuChoice == 3) || (playerChoice == 2 && cpuChoice == 1) ||
-                (playerChoice == 3 && cpuChoice == 2)) {
-            System.out.println("Wygrałeś runde!");
+        if((playerChoice == 1 && secPlayerChoice == 3) || (playerChoice == 2 && secPlayerChoice == 1) ||
+                (playerChoice == 3 && secPlayerChoice == 2)) {
+            System.out.println("You won the round!");
             playerPoints++;
         } else {
-            System.out.println("Przegrałeś runde!");
-            cpuPoints++;
+            System.out.println("You lost the round!");
+            secondPlayerPoints++;
         }
     }
 
     public String optionString(int option) {
         if(option == 1) {
-            return "Kamien";
+            return "Rock";
         } else if(option == 2) {
-            return "Papier";
+            return "Paper";
         } else {
-            return "Nożyce";
+            return "Scissors";
         }
     }
 
     public void checkGameStatus() {
 
-        System.out.println("Punkty gracza " + playerPoints);
-        System.out.println("Punkty cpu " + cpuPoints);
+        System.out.println("Players points " + playerPoints);
+        System.out.println("Second player points " + secondPlayerPoints);
 
         if(playerPoints == roundsNumber) {
-            System.out.println("BRAWO! Wygrales/as pojedynek!");
+            System.out.println("CONGRATULATIONS! You won!");
             end = true;
             endStatus = "ask";
-        } else if(cpuPoints == roundsNumber) {
-            System.out.println("Sprobuj jeszcze raz !");
+        } else if(secondPlayerPoints == roundsNumber) {
+            System.out.println("Try again!");
             end = true;
             endStatus = "ask";
         }
@@ -149,7 +145,7 @@ public class Game {
 
     public boolean confirm() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Wprowadz y aby potwierdzic lub cokolwiek aby anulowac operacje : ");
+        System.out.println("Enter y to confirm or any key to cancel: ");
         if(sc.next().equals("y")){
             return true;
         }
@@ -160,8 +156,8 @@ public class Game {
         if(endStatus.equals("restart")) {
             startNewGame();
         } else if (endStatus.equals("ask")) {
-            System.out.println("Aby rozpoczac nowa gre wcisnij n");
-            System.out.println("Aby zakonczyc program wcisnij x");
+            System.out.println("Enter n to start new game");
+            System.out.println("Enter x to finish game");
             Scanner sc = new Scanner(System.in);
             char option = sc.next().charAt(0);
             if(option == 'n') {
@@ -169,6 +165,5 @@ public class Game {
             }
         }
     }
-
 }
 
