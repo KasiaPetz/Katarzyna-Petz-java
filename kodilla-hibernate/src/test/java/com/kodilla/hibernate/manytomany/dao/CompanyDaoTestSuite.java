@@ -2,6 +2,7 @@ package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
+import com.kodilla.hibernate.manytomany.facade.CompanyFacade;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +21,8 @@ public class CompanyDaoTestSuite {
     CompanyDao companyDao;
     @Autowired
     EmployeeDao employeeDao;
+    @Autowired
+    CompanyFacade companyFacade;
 
     @Test
     public void testSaveManyToMany(){
@@ -92,5 +95,23 @@ public class CompanyDaoTestSuite {
 
         //Then
         Assert.assertEquals(1, employees.size());
+    }
+
+    @Test
+    public void testRetrieveCompanyByFragment() {
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        //When
+        companyDao.save(softwareMachine);
+        companyDao.save(dataMaesters);
+        companyDao.save(greyMatter);
+        List<Company> companies = companyFacade.getCompaniesByFieldFragment("name", "Grey");
+
+        //then
+        Assert.assertEquals(1, companies.size());
+
     }
 }

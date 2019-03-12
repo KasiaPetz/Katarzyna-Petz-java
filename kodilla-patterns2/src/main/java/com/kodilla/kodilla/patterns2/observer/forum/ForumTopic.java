@@ -9,6 +9,7 @@ public class ForumTopic implements Observable{
     private final String name;
 
     public ForumTopic(String name) {
+        observers = new ArrayList<>();
         messages = new ArrayList<>();
         this.name = name;
     }
@@ -28,7 +29,6 @@ public class ForumTopic implements Observable{
         for(Observer observer: observers) {
             observer.update(this);
         }
-
     }
 
     @Override

@@ -11,6 +11,10 @@ import java.util.List;
     query = "SELECT * FROM companies WHERE LEFT(company_name, 3) = :LETTERS",
     resultClass = Company.class
 )
+@NamedQuery(
+        name = "Company.getCompaniesByFieldFragment",
+        query = "FROM Company WHERE :FIELD LIKE :ARG"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
