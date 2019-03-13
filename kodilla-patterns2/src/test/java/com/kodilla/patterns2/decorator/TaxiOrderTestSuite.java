@@ -2,7 +2,6 @@ package com.kodilla.patterns2.decorator;
 
 import static org.junit.Assert. *;
 
-import com.kodilla.kodilla.patterns2.decorator.taxiportal.*;
 import com.kodilla.patterns2.decorator.taxiportal.*;
 import org.junit.Test;
 

@@ -1,6 +1,5 @@
 package com.kodilla.patterns2.decorator;
 
-import com.kodilla.kodilla.patterns2.decorator.pizza.*;
 import com.kodilla.patterns2.decorator.pizza.*;
 import org.junit.Assert;
 import org.junit.Test;
