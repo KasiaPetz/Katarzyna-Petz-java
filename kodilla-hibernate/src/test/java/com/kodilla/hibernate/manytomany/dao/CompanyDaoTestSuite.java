@@ -108,10 +108,46 @@ public class CompanyDaoTestSuite {
         companyDao.save(softwareMachine);
         companyDao.save(dataMaesters);
         companyDao.save(greyMatter);
-        List<Company> companies = companyFacade.getCompaniesByFieldFragment("name", "Grey");
 
-        //then
+        List<Company> companies = companyFacade.getCompaniesByFieldFragment("Gre");
+
+        //Then
         Assert.assertEquals(1, companies.size());
 
+        //CleanUp
+        try {
+            companyDao.delete(dataMaesters);
+            companyDao.delete(greyMatter);
+            companyDao.delete(softwareMachine);
+        } catch (Exception e) {
+            //do nothing
+        }
+    }
+
+    @Test
+    public void testRetrieveEmployeeByFragment() {
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+
+        //When
+        employeeDao.save(johnSmith);
+        employeeDao.save(stephanieClarckson);
+        employeeDao.save(lindaKovalsky);
+
+        List<Employee> employees = companyFacade.getEmployeeByFragment("Smit");
+
+        //Then
+        Assert.assertEquals(1, employees.size());
+
+        //CleanUp
+        try {
+            employeeDao.delete(johnSmith);
+            employeeDao.delete(stephanieClarckson);
+            employeeDao.delete(lindaKovalsky);
+        } catch (Exception e) {
+            //do nothing
+        }
     }
 }

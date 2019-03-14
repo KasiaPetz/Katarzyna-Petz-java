@@ -6,14 +6,14 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
+@NamedNativeQuery(   //natywne
     name = "Company.retrieveFirstLetters",
     query = "SELECT * FROM companies WHERE LEFT(company_name, 3) = :LETTERS",
     resultClass = Company.class
 )
 @NamedQuery(
-        name = "Company.getCompaniesByFieldFragment",
-        query = "FROM Company WHERE :FIELD LIKE :ARG"
+        name = "Company.findByCompanyNameFragment",
+        query = "FROM Company WHERE name LIKE :ARG"
 )
 @Entity
 @Table(name = "COMPANIES")
