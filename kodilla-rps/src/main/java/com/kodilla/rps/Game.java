@@ -87,7 +87,6 @@ public class Game {
         System.out.println("3 - \"scissors\"");
         System.out.println("x - finish game");
         System.out.println("n - restart");
-
     }
 
     //0 - remis 1 - wygrana -1 - przegrana

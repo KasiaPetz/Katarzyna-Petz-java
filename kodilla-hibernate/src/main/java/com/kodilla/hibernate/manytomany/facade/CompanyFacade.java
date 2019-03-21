@@ -24,5 +24,4 @@ public class CompanyFacade {
     public List<Employee> getEmployeeByFragment(String fragment) {
         return employeeDao.findByEmployeeNameFragment("%"+fragment+"%");
     }
-
 }
