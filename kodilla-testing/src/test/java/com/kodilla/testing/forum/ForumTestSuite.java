@@ -2,7 +2,6 @@ package com.kodilla.testing.forum;
 
 import org.junit.*;
 
-//Test suite for classes of Forum
 public class ForumTestSuite {
     private static int testCounter = 0;
 

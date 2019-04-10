@@ -1,6 +1,5 @@
 package com.kodilla.testing.collection;
 
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,7 +16,7 @@ public class CollectionTestSuite {
         System.out.println("Test Case : end");
     }
     @Test
-        public void testOddNumbersExterminatorEmptyList() {         // sprawdza na pustej lisce
+        public void testOddNumbersExterminatorEmptyList() {         // sprawdza na pustej liscie
         //Given
         ArrayList<Integer> list = new ArrayList<>();
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
