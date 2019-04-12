@@ -1,7 +1,5 @@
 package com.kodilla.testing.forum;
 
-import java.util.Objects;
-
 public class ForumPost {
     String postBody;
     String author;
@@ -10,6 +8,7 @@ public class ForumPost {
         this.postBody = postBody;
         this.author = author;
     }
+
     public String getPostBody() {
         return postBody;
     }

@@ -1,7 +1,5 @@
 package com.kodilla.testing.shape;
 
-import com.kodilla.testing.shape.Shape;
-
 public class Circle implements Shape {
     private final double pi = 3.14;
     private double r;

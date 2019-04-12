@@ -19,7 +19,6 @@ public class ForumTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
-    // test 1
     @Test
     public void testAddPost() {
         //Given
@@ -29,5 +28,4 @@ public class ForumTestSuite {
         //Then
         Assert.assertEquals(1, forumUser.getPostsQuantity());
     }
-
 }

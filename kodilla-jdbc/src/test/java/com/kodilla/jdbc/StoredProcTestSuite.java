@@ -1,6 +1,7 @@
 package com.kodilla.jdbc;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.sql.ResultSet;
@@ -30,6 +31,7 @@ public class StoredProcTestSuite {
         Assert.assertEquals(0, howMany);
     }
     @Test
+    @Ignore
     public void testUpdateBestsellers() throws SQLException {
         DbManager dbManager = DbManager.getInstance();
         String sglUpdate = "UPDATE BOOKS SET BESTSELLERS=0";

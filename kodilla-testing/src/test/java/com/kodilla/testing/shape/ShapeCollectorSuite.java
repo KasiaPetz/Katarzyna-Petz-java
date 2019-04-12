@@ -21,7 +21,7 @@ public class ShapeCollectorSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
-    // test addFigure()
+
     @Test
      public void testAddFigure() {
         //Given
@@ -33,7 +33,6 @@ public class ShapeCollectorSuite {
         Assert.assertEquals(1, sc.getFigures().size());
     }
 
-    // test removeFigure(Shape shape)
     @Test
     public void testRemoveFigure() {
         //Given
@@ -45,7 +44,7 @@ public class ShapeCollectorSuite {
         //Then
         Assert.assertEquals(0, sc.getFigures().size());
     }
-    // test getFigure
+
     @Test
     public void testGetFigure () {
         //Given

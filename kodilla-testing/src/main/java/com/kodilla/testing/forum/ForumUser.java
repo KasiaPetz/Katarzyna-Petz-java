@@ -6,14 +6,11 @@ import java.util.LinkedList;
 public class ForumUser {
     private String name;
     private String realName;
-    // pola bedace kolekcjami
     private ArrayList<ForumPost> posts = new ArrayList<ForumPost>();
     private LinkedList<ForumComment> comments = new LinkedList<ForumComment>();
 
     public ForumUser(String name, String realName) {
-        //name visible on forum
         this.name = name;
-        //real name of the user
         this.realName = realName;
     }
 
