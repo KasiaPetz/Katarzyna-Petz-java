@@ -14,9 +14,10 @@ public class WeatherForecastTestSuite {
     @Test
     public void testcalculateForaecastWithMock() {
         //Given
-        // tworzony jesy mock interfejsu Temperatures o nazwie temperaturesMock
+        // tworzony jest mock interfejsu Temperatures o nazwie temperaturesMock
         Temperatures temperaturesMock = mock(Temperatures.class);
-        // pzygotowanie obiektu temperaturesMap bedacy HashMapa
+
+        // przygotowanie obiektu temperaturesMap bedacy HashMapa
         HashMap<Integer, Double> temperaturesMap = new HashMap<Integer, Double>();
         temperaturesMap.put(0, 25.5);
         temperaturesMap.put(1, 26.2);

@@ -2,22 +2,12 @@ package com.kodilla.testing.forum.statistics;
 
 
 public class StatisticsCounter{
-
     private int usersQuantity;
     private int posts;
     private int comments;
     private double avgPostPerUser;
     private double avgCommentsPerUser;
     private double avgCommentsPerPost;
-
- /*   public StatisticsCounter(int usersQuantity, int posts, int comments, double avgPostPerUser, double avgCommentsPerUser, double avgCommentsPerPost) {
-        this.usersQuantity = usersQuantity;
-        this.posts = posts;
-        this.comments = comments;
-        this.avgPostPerUser = avgPostPerUser;
-        this.avgCommentsPerUser = avgCommentsPerUser;
-        this.avgCommentsPerPost = avgCommentsPerPost;
-    } */
 
     public int getUsersQuantity() {
         return usersQuantity;
@@ -47,6 +37,7 @@ public class StatisticsCounter{
         usersQuantity = statistics.usersNames().size();
         posts = statistics.postsCount();
         comments = statistics.commentsCount();
+
         if(usersQuantity !=0) {
             avgPostPerUser = posts / usersQuantity;
             avgCommentsPerUser = comments / usersQuantity;

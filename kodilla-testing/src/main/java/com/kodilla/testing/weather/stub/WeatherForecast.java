@@ -9,6 +9,7 @@ public class WeatherForecast {
     public WeatherForecast (Temperatures temperatures) {
         this.temperatures = temperatures;
     }
+
     public HashMap<Integer, Double> calculateForecast() {
         HashMap<Integer, Double> resultMap = new HashMap<Integer, Double>();
 
@@ -18,6 +19,7 @@ public class WeatherForecast {
             // as a temprorary weather forecast
             resultMap.put(temperature.getKey(), temperature.getValue() + 1);
             }
+
         return resultMap;
         }
 }

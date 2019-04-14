@@ -1,7 +1,5 @@
 package board;
 
 public class None extends Figure {
-    public None(String color) {
-        super(color);
-    }
+    // wywaliny domyslny bo i tak jest
 }
