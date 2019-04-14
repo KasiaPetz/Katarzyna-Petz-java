@@ -40,6 +40,7 @@ public class Book {
                 Objects.equals(title, book.title) &&
                 Objects.equals(author, book.author);
     }
+
     @Override
     public int hashCode() {
         int result = title.hashCode();
@@ -47,6 +48,4 @@ public class Book {
         result = 31 * result + publicationYear;
         return result;
     }
-
-
 }

@@ -10,6 +10,7 @@ public class LibraryUser {
         this.lastname = lastname;
         this.peselId = peselId;
     }
+
     public String getFirstname() {
         return firstname;
     }
@@ -27,6 +28,7 @@ public class LibraryUser {
                 ", peselId='" + peselId + '\'' +
                 '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookLibrary {
-
     private LibraryDatabase libraryDatabase;
 
-    //obiekt obsługujacy baze danych
     public BookLibrary(LibraryDatabase libraryDatabase) {
         this.libraryDatabase = libraryDatabase;
     }
@@ -24,6 +22,5 @@ public class BookLibrary {
 
      public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         return libraryDatabase.listBooksInHandsOf(libraryUser);
-
      }
 }

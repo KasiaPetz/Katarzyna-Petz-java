@@ -1,9 +1,5 @@
-package com.kodilla.testing;
+package com.kodilla.testing.library;
 
-import com.kodilla.testing.library.Book;
-import com.kodilla.testing.library.BookLibrary;
-import com.kodilla.testing.library.LibraryDatabase;
-import com.kodilla.testing.library.LibraryUser;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -31,7 +27,6 @@ public class BookDirectoryTestSuite {
     @Test
     public void testListBooksWithConditionsReturnList() {
         // Given
-        // stworzenie mocka
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         // stworzenie obiektu z wstrzyknieciem mocka
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
