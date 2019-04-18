@@ -8,7 +8,8 @@ public final class Book {
     private final int yearOfPublication;
     private final String signature;
 
-    public Book(String author, String title, int yearOfPublication, String signature) {
+    public Book( final String author, final String title,
+                 final int yearOfPublication, final String signature) {
         this.author = author;
         this.title = title;
         this.yearOfPublication = yearOfPublication;
